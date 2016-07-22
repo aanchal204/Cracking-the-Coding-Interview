@@ -23,3 +23,8 @@ int main(void){
 		cout<<"Doesnt have unique characters"<<endl;
 	return 0;
 }
+/*
+What if you cannot use additional data structures?
+-> compare the character with every other character to find duplicates
+or sort the string and then compare the adjacent characters
+*/
