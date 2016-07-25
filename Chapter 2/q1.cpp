@@ -1,5 +1,6 @@
 /*Remove duplicates: Given an unsorted linked list, remove the duplicates from it. */
 #include<iostream>
+#include<unordered_set>
 #include "linkedList.h"
 using namespace std;
 void removeDuplicates(node *head){
@@ -20,6 +21,26 @@ void removeDuplicates(node *head){
 		ptr1 = ptr1->next;
 	}
 }
+/*
+Unordered set calculates the hash value and places the elements in the buckets
+*/
+void removeDuplicateByHashing(node *head){
+	unordered_set<int> hashTable;
+	node *prev = head;
+	head = head->next;
+	hashTable.insert(prev->val);
+	while(head!=NULL){
+		auto search = hashTable.find(head->val);
+		if(search != hashTable.end()){
+			prev->next = head->next;
+			head = head->next;
+		}else{
+			hashTable.insert(head->val);
+			head = head->next;
+			prev = prev->next;
+		}
+	}
+}
 int main(void){
 	node * head = NULL;
 	int x;
@@ -30,7 +51,8 @@ int main(void){
 		cin>>x;
 	}while(x!=-1);
 	printLL(head);
-	removeDuplicates(head);
+	// removeDuplicates(head);
+	removeDuplicateByHashing(head);
 	printLL(head);
 	return 0;
 }
