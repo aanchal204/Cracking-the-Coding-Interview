@@ -21,3 +21,22 @@ void printLL(node *head){
 	}
 	cout<<endl;
 }
+int lengthLL(node *head){
+	int len = 0;
+	while(head!=NULL){
+		len++;
+		head = head->next;
+	}
+	return len;
+}
+node * createLL(void){
+	node * head = NULL;
+	int x;
+	cout<<"Enter elements of LL (-1 to stop)."<<endl;
+	cin>>x;
+	do{
+		insertAtTail(&head,x);
+		cin>>x;
+	}while(x!=-1);
+	return head;
+}

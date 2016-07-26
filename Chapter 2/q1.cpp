@@ -42,14 +42,7 @@ void removeDuplicateByHashing(node *head){
 	}
 }
 int main(void){
-	node * head = NULL;
-	int x;
-	cout<<"Enter elements of LL (-1 to stop)."<<endl;
-	cin>>x;
-	do{
-		insertAtTail(&head,x);
-		cin>>x;
-	}while(x!=-1);
+	node *head = createLL();
 	printLL(head);
 	// removeDuplicates(head);
 	removeDuplicateByHashing(head);

@@ -4,3 +4,5 @@ typedef struct node{
 }node;
 void insertAtTail(node **head, int x);
 void printLL(node *head);
+node * createLL(void);
+int lengthLL(node *head);

@@ -18,14 +18,8 @@ node* kthToLast(node *head, int k){
 	return current;
 }
 int main(void){
-	node * head = NULL;
-	int x,k;
-	cout<<"Enter elements of LL (-1 to stop)."<<endl;
-	cin>>x;
-	do{
-		insertAtTail(&head,x);
-		cin>>x;
-	}while(x!=-1);
+	int k;
+	node *head = createLL();
 	printLL(head);
 	cout<<"Enter k:"<<endl;
 	cin>>k;
