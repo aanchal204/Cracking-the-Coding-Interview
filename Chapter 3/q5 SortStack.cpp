@@ -1,5 +1,7 @@
 /*
-Queue via Stacks: Implement a queue using stacks
+Sort Stacks: Write a program to sort a stack such that the smallest item is on the top.You can use
+an additional temporary stack but you may not copy the elements into any other data structure.
+The stack supports the following operations : push, pop, peek and isEmpty
 
 Approach: Use a secondary stack
 Pop an element from the primary stack and insert it into the appropriate place in the
